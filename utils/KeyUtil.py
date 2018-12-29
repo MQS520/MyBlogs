@@ -20,7 +20,7 @@ def generate_token(key, expire = 3600):
     # 设置token 有效期 3600s
     ts_str = str(time.time() + 3600)
     ts_type = ts_str.encode('utf-8')
-    sha1_tshexstr = hmac.new(key.encode('utf-8'), ts_type, 'sha1').hexdigest()
+    sha1_tshexstr = hmac.new(str(key).encode('utf-8'), ts_type, 'sha1').hexdigest()
     token = ts_str + ':' + sha1_tshexstr
     b64_token = base64.urlsafe_b64encode(token.encode('utf-8'))
     return b64_token.decode('utf-8')

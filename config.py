@@ -11,3 +11,13 @@ class Config(object):
     # 格式为mysql+pymysql://数据库用户名:密码@数据库地址:端口号/数据库的名字?数据库格式
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost:3306/myblogs?charset=utf8'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+# 返回结果
+def Result(status, msg, data):
+    result = {
+        'status': status,
+        'msg': msg,
+        'data': data
+    }
+    return result

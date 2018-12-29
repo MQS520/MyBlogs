@@ -5,8 +5,8 @@
 # software: PyCharm
 # desc:
 from app import db
-import json
 
+# user表
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer,primary_key=True)
@@ -15,25 +15,9 @@ class User(db.Model):
     password = db.Column(db.String(128))
     createtime = db.Column(db.TIMESTAMP)
 
+    # 数据库中 id自增长，createtime 默认当前时间
     def __init__(self, username, email, password):
         self.username = username
         self.password = password
         self.email = email
-
-
-# class Result:
-#
-#     def __init__(self, status, msg):
-#         self.status = status
-#         self.msg = msg
-#
-#     def __str__(self):
-#         return "status:[%s],msg:[%s]" % (self.status, self.msg)
-
-def result(status, msg):
-    result = {
-        'status': status,
-        'msg': msg
-    }
-    return result
 
