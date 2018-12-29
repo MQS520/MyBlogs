@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 # from flask_migrate import Manager
 
 
+
+
 app = Flask(__name__)
 
 # 导入配置文件
