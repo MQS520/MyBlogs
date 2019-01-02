@@ -15,7 +15,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 # manager = Manager(app)
 
-from controller import Login
+import route
 
 if __name__ == '__main__':
     app.run()
