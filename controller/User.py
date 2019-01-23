@@ -13,11 +13,11 @@ from controller.common import Result, verify_token
 class Login(Resource):
     def post(self):
         user = request.json
-        username = user['username']
+        account = user['account']
         password = user['password']
         password = generate_password(password)
         # 根据username 查询用户是否存在
-        user = User.query.filter(User.username == username).first()
+        user = User.query.filter(User.account == account).first()
         if user == None:
             return Result(False, '该用户不存在，请前往注册！', None)
         if user.password != password:

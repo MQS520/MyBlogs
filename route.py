@@ -7,7 +7,7 @@
 @desc:
 '''
 from app import app
-from controller import User
+from controller import User, Post
 from flask_restful import Api
 
 api = Api(app)
@@ -15,3 +15,4 @@ api = Api(app)
 api.add_resource(User.Login, '/login')
 api.add_resource(User.Regist, '/regist')
 api.add_resource(User.Modify,'/user/modify')
+api.add_resource(Post.Add, '/post/add')
